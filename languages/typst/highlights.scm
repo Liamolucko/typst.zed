@@ -38,8 +38,8 @@
 (wildcard) @operator
 
 ; VALUE
-(raw_blck "```" @operator) @markup.raw.block
-(raw_span "`" @operator) @markup.raw.block
+(raw_blck "```") @text.literal
+(raw_span "`") @text.literal
 (raw_blck lang: (ident) @tag)
 (label) @tag
 (ref) @tag
@@ -52,20 +52,20 @@
 (ident) @variable
 
 ; MARKUP
-(item "-" @markup.list)
-(term ["/" ":"] @markup.list)
-(heading "=" @markup.heading.marker) @markup.heading.1
-(heading "==" @markup.heading.marker) @markup.heading.2
-(heading "===" @markup.heading.marker) @markup.heading.3
-(heading "====" @markup.heading.marker) @markup.heading.4
-(heading "=====" @markup.heading.marker) @markup.heading.5
-(heading "======" @markup.heading.marker) @markup.heading.6
+(item "-" @punctuation.list_marker)
+(term ["/" ":"] @punctuation.list_marker)
+(heading "=") @title
+(heading "==") @title
+(heading "===") @title
+(heading "====") @title
+(heading "=====") @title
+(heading "======") @title
 (url) @tag
-(emph) @markup.italic
-(strong) @markup.bold
+(emph) @emphasis
+(strong) @emphasis.strong
 (symbol) @constant.character
 (shorthand) @constant.builtin
-(quote) @markup.quote
+(quote) @punctuation
 (align) @operator
 (letter) @constant.character
 (linebreak) @constant.builtin
